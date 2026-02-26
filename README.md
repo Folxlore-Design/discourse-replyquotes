@@ -1,6 +1,6 @@
 # discourse-replyquotes
 
-A Discourse plugin that automatically inserts a quote of the first paragraph of a post when a user clicks the per-post reply button.
+A Discourse **theme component** that automatically inserts a quote of the first paragraph of a post when a user clicks the per-post reply button.
 
 ## What it does
 
@@ -10,23 +10,17 @@ Replies to the topic (not a specific post) are unaffected. Existing drafts are n
 
 ## Installation
 
-Add to your Discourse instance via the admin plugin installer or by cloning into the `plugins/` directory:
+In your Discourse admin panel, go to **Appearance → Themes**, click **Install**, choose **From a git repository**, and enter:
 
-```bash
-cd /var/discourse/plugins
-git clone https://github.com/Folxlore-Design/discourse-replyquotes.git
+```
+https://github.com/Folxlore-Design/discourse-replyquotes
 ```
 
-Then rebuild the app:
-
-```bash
-cd /var/discourse
-./launcher rebuild app
-```
+No rebuild required. Activate the component by adding it to your active theme.
 
 ## How it works
 
-Pure client-side — no backend code or site settings. The plugin hooks into the Discourse composer's `open()` method. When `model.replyPost` is set (indicating a per-post reply), it extracts the first `<p>` from the post's rendered HTML and formats it as a standard Discourse quote block:
+Pure client-side — no backend code or site settings. The component hooks into the Discourse composer's `open()` method. When `model.replyPost` is set (indicating a per-post reply), it extracts the first `<p>` from the post's rendered HTML and formats it as a standard Discourse quote block:
 
 ```
 [quote="username, post:N, topic:M"]
