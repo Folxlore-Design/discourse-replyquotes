@@ -2,5 +2,5 @@
   "name": "Reply Quotes",
   "about": "Auto-inserts a quote of the first paragraph when replying to a specific post",
   "authors": "Branwyn Tylwyth",
-  "minimum_discourse_version": "2.8.0"
+  "component": true
 }
